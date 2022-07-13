@@ -1,0 +1,33 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
+    "diagnostic.checkCurrentLine": true,
+    "diagnostic.virtualText": false,
+    "diagnostic.virtualTextAlignRight": true,
+    "diagnostic.virtualTextCurrentLineOnly": false,
+    "diagnostic.virtualTextPrefix": " 🛑 ",
+    "eslint.autoFixOnSave": true,
+    "eslint.fileTypes":["javascript", "javascriptreact", "typescript", "typescriptreact"],
+    "prettier.disableSuccessMessage": true,
+    "typescript.inlayHints.variableTypes.enabled": true,
+    "typescript.inlayHints.parameterNames.enabled": "all",
+    "typescript.inlayHints.parameterTypes.enabled": true,
+    "typescript.inlayHints.enumMemberValues.enabled": true,
+    "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
+    "languageserver": {
+      "graphql": {
+        "command": "graphql-lsp",
+        "args": ["server", "-m", "stream"],
+        "filetypes": ["typescript", "typescriptreact", "graphql"],
+        "settings": {
+          "graphql-config.load.legacy": true
+        }
+      }
+    }
+}
