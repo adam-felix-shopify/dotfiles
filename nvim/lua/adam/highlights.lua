@@ -1,1 +1,5 @@
 vim.api.nvim_set_hl(0, 'LspInlayHint', { ctermbg='LightBlue', ctermfg='Blue', bold=true })
+vim.api.nvim_set_hl(0, 'DiagnosticSignError', { ctermbg='LightRed', ctermfg='Blue', bold=true })
+vim.api.nvim_set_hl(0, 'DiagnosticSignWarn', { ctermbg='LightYellow', ctermfg='Blue', bold=true })
+vim.api.nvim_set_hl(0, 'DiagnosticSignHint', { ctermbg='LightBlue', ctermfg='Blue', bold=true })
+vim.api.nvim_set_hl(0, 'DiagnosticSignInfo', { ctermbg='White', ctermfg='Blue', bold=true })

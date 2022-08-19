@@ -26,7 +26,15 @@ configs.setup({
 		extended_mode = true, -- Highlight non-bracket delimiters like html tags, boolean or table: language -> boolean
 		max_file_line = nil, -- Do not enable for files with more than n lines, int
 		-- colors = {}, -- Table of hex strings
-		-- termcolors = {}, --table of colour name strings
+		termcolors = {
+            "LightRed",
+            "LightGreen",
+            "LightYellow",
+            "LightBlue",
+            "LightMagenta",
+            "Cyan",
+            "White",
+        }, --table of colour name strings
 	},
 	autotag = {
 		enable = true,

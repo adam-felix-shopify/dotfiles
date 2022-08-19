@@ -20,6 +20,7 @@ require("adam.highlights")
 require("adam.illuminate")
 require("adam.fidget")
 require("adam.keymaps")
+require("adam.autocommands")
 
 -- vim.api.nvim_set_hl(0, 'Search', { ctermbg='DarkRed', ctermfg='LightYellow', bold=true })
 -- vim.api.nvim_set_hl(0, 'Whitespace', { ctermfg='LightGray' })

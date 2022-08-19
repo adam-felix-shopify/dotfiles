@@ -14,14 +14,11 @@ vim.g.indent_blankline_filetype_exclude = {
 	"Trouble",
 }
 vim.g.indentLine_enabled = 1
--- vim.g.indent_blankline_char = "│"
-vim.g.indent_blankline_char = "▏"
 -- vim.g.indent_blankline_char = "▎"
 vim.g.indent_blankline_show_trailing_blankline_indent = false
 vim.g.indent_blankline_show_first_indent_level = true
 vim.g.indent_blankline_use_treesitter = true
 vim.g.indent_blankline_show_current_context = true
-vim.g.indent_blankline_char = '»'
 vim.g.indent_blankline_strict_tabs = true
 vim.g.indent_blankline_context_patterns = {
 	"class",
@@ -46,12 +43,12 @@ vim.g.indent_blankline_context_patterns = {
 	"operation_type",
 }
 
-vim.cmd [[highlight IndentBlanklineIndent1 ctermfg=DarkRed]]
-vim.cmd [[highlight IndentBlanklineIndent2 ctermfg=DarkBlue]]
-vim.cmd [[highlight IndentBlanklineIndent3 ctermfg=DarkYellow]]
-vim.cmd [[highlight IndentBlanklineIndent4 ctermfg=DarkMagenta]]
-vim.cmd [[highlight IndentBlanklineIndent5 ctermfg=Cyan]]
-vim.cmd [[highlight IndentBlanklineIndent6 ctermfg=Blue]]
+vim.cmd [[highlight IndentBlanklineIndent1 ctermfg=LightRed]]
+vim.cmd [[highlight IndentBlanklineIndent2 ctermfg=LightGreen]]
+vim.cmd [[highlight IndentBlanklineIndent3 ctermfg=LightYellow]]
+vim.cmd [[highlight IndentBlanklineIndent4 ctermfg=LightBlue]]
+vim.cmd [[highlight IndentBlanklineIndent5 ctermfg=LightMagenta]]
+vim.cmd [[highlight IndentBlanklineIndent6 ctermfg=Cyan]]
 
 indent_blankline.setup({
 	show_end_of_line = true,
