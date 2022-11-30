@@ -1,6 +1,6 @@
-vim.cmd([[
-set guicursor=
-]])
+-- vim.cmd([[
+-- set guicursor=
+-- ]])
 
 vim.opt.shortmess:append 'c'
 vim.opt.path:append '**'
@@ -34,3 +34,4 @@ vim.opt.wrap = false
 vim.opt.timeoutlen = 100
 
 vim.g.cursorhold_updatetime = 100
+

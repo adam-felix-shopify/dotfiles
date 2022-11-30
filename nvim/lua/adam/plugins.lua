@@ -69,6 +69,10 @@ return packer.startup(function(use)
 	use("j-hui/fidget.nvim")
 	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
 
+	--[[ use({ "ms-jpq/coq_nvim", run = "python3 -m coq deps" }) ]]
+	--[[ use("ms-jpq/coq.artifacts") ]]
+	--[[ use("ms-jpq/coq.thirdparty") ]]
+
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-media-files.nvim")

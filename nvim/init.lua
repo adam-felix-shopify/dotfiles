@@ -1,17 +1,18 @@
 require("adam.options")
+require("adam.keymaps")
 require("adam.plugins")
 require("adam.colorscheme")
-require("adam.lsp")
 require("adam.cmp")
+require("adam.lsp")
 require("adam.telescope")
 require("adam.treesitter")
 require("adam.autopairs")
 require("adam.comments")
 require("adam.gitsigns")
 require("adam.nvimtree")
+require("adam.bufferline")
 require("adam.lualine")
 require("adam.toggleterm")
-require("adam.bufferline")
 require("adam.project")
 require("adam.indentline")
 require("adam.alpha")
@@ -19,7 +20,6 @@ require("adam.whichkey")
 require("adam.highlights")
 require("adam.illuminate")
 require("adam.fidget")
-require("adam.keymaps")
 require("adam.autocommands")
 
 -- vim.api.nvim_set_hl(0, 'Search', { ctermbg='DarkRed', ctermfg='LightYellow', bold=true })
@@ -56,12 +56,12 @@ vim.api.nvim_exec(
       hi LspReferenceText ctermfg=Yellow ctermbg=DarkCyan cterm=bold
       hi LspReferenceWrite ctermfg=Magenta ctermbg=Black cterm=bold
     ]],
-      -- augroup lsp_document_highlight
-      --   autocmd!
-      --   autocmd CursorHold <buffer> lua vim.notify("CursorHold")
-      --   autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-      --   autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
-      --   autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      -- augroup END
+	-- augroup lsp_document_highlight
+	--   autocmd!
+	--   autocmd CursorHold <buffer> lua vim.notify("CursorHold")
+	--   autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+	--   autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
+	--   autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+	-- augroup END
 	false
 )

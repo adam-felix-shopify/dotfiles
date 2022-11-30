@@ -22,18 +22,6 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 
-#PROMPT="%B%F{130}%D{%c}%f %F{#000000}::%f %F{087}%n%f %F{#000000}->%f %F{040}%d%f%b
-#>>= "
-#RPROMPT='%B${vcs_info_msg_0_} %b'
-
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' unstagedstr "%K{166}%F{015}%Udirty files%u%f%k %F{015}::%f "
-zstyle ':vcs_info:*' stagedstr "%K{064}%F{015}%Ustaged changes%u%f%k %F{015}::%f "
-zstyle ':vcs_info:git:*' formats       '%m%u%c%F{011}%b%f'
-zstyle ':vcs_info:git:*' actionformats '%m%a%u%c%F{011}%b%f'
-
-zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
-
 setopt prompt_subst
 autoload -U colors && colors # Enable colors in prompt
 
@@ -63,12 +51,12 @@ git_info() {
 
   local NUM_AHEAD="$(git log --oneline @{u}.. 2> /dev/null | wc -l | tr -d ' ')"
   if [ "$NUM_AHEAD" -gt 0 ]; then
-    DIVERGENCES+=( "${AHEAD//NUM/$NUM_AHEAD}" )
+    DIVERGENCES+=( " ${AHEAD//NUM/$NUM_AHEAD} " )
   fi
 
   local NUM_BEHIND="$(git log --oneline ..@{u} 2> /dev/null | wc -l | tr -d ' ')"
   if [ "$NUM_BEHIND" -gt 0 ]; then
-    DIVERGENCES+=( "${BEHIND//NUM/$NUM_BEHIND}" )
+    DIVERGENCES+=( " ${BEHIND//NUM/$NUM_BEHIND} " )
   fi
 
   local GIT_DIR="$(git rev-parse --git-dir 2> /dev/null)"
@@ -90,13 +78,35 @@ git_info() {
   fi
 
   local -a GIT_INFO
-  GIT_INFO+=( "::%{$reset_color%} " )
+  GIT_INFO+=( "::%{$reset_color%}" )
   [ -n "$GIT_STATUS" ] && GIT_INFO+=( "$GIT_STATUS" )
   [[ ${#DIVERGENCES[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)DIVERGENCES}" )
-  [[ ${#FLAGS[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)FLAGS}" )
+  [[ ${#FLAGS[@]} -ne 0 ]] && GIT_INFO+=( " ${(j::)FLAGS}" )
   GIT_INFO+=( " %B%{$fg[green]%}$GIT_LOCATION%{$reset_color%}%b" )
   echo "${(j::)GIT_INFO}"
 }
 
+function insert-mode () { echo "%K{015} %F{033}%BINSERT%b%f %k" }
+function normal-mode () { echo "%K{040} %F{022}%BNORMAL%b%f %k" }
+function visual-mode () { echo "%K{166} %F{088}%BVISUAL%b%f %k" }
+function operator-mode () { echo "%F{229}%BOPERATOR-PENDING%b%f" }
+
+function set-prompt () {
+    case ${KEYMAP} in
+      (vicmd)      VI_MODE="$(normal-mode)"   ;;
+      (main|viins) VI_MODE="$(insert-mode)"   ;;
+      (viopp)      VI_MODE="$(operator-mode)" ;;
+      (*)          VI_MODE="$(insert-mode)"   ;;
+    esac
+
 PROMPT='$(ssh_info)%B%{$fg[blue]%D{%c}%}%{$reset_color%}%b :: %B%F{055}%n%f%b :: %B%{$fg[magenta]%}%~%u%b %{$fg[red]%}%{$reset_color%}$(git_info)%{$reset_color%}
-%(?.%{$fg[blue]%}.%{$fg[red]%})%(!.#.»)%{$reset_color%} '
+$(echo $VI_MODE) %(?.%{$fg[blue]%}.%{$fg[red]%})%(!.#.)%{$reset_color%} '
+}
+
+function zle-line-init zle-keymap-select {
+    set-prompt
+    zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
