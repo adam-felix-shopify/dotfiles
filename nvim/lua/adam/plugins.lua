@@ -67,7 +67,6 @@ return packer.startup(function(use)
 	use("ray-x/lsp_signature.nvim")
 	use("RRethy/vim-illuminate")
 	use("j-hui/fidget.nvim")
-	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
 
 	--[[ use({ "ms-jpq/coq_nvim", run = "python3 -m coq deps" }) ]]
 	--[[ use("ms-jpq/coq.artifacts") ]]

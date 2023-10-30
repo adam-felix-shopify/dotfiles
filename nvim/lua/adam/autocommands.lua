@@ -1,12 +1,12 @@
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-	-- pattern = { "*.ts" },
+	pattern = { "*.tsx", "*.ts", "*.js", "*.jsx", "*.kt", "*.java", "*.m", "*.h", "*.swift", "*.graphql", "*.gql", "*.markdown", "*.md", "*.rust" },
 	callback = function()
 		vim.lsp.buf.format({ async = true })
 	end,
 })
 
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
-	pattern = { "*.ts", "*.js", "*.jsx", "*.tsx", "*.graphql", "*.gql", "*.json" },
+	pattern = { "*.ts", "*.js", "*.jsx", "*.tsx", "*.graphql", "*.gql" },
 	callback = function()
 		vim.opt.expandtab = true
 		vim.opt.tabstop = 2

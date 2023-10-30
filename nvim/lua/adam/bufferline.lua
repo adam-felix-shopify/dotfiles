@@ -13,7 +13,11 @@ bufferline.setup({
 		-- NOTE: this plugin is designed with this icon in mind,
 		-- and so changing this is NOT recommended, this is intended
 		-- as an escape hatch for people who cannot bear it for whatever reason
-		indicator_icon = "▎",
+		-- indicator_icon = "▎",
+		indicator = {
+			icon = "▎",
+			style = 'icon'
+		},
 		buffer_close_icon = "",
 		-- buffer_close_icon = '',
 		modified_icon = "●",
@@ -28,7 +32,7 @@ bufferline.setup({
 		-- name_formatter = function(buf)  -- buf contains a "name", "path" and "bufnr"
 		--   -- remove extension from markdown files for example
 		--   if buf.name:match('%.md') then
-		--     return vim.fn.fnamemodify(buf.name, ':t:r')
+		--	 return vim.fn.fnamemodify(buf.name, ':t:r')
 		--   end
 		-- end,
 		max_name_length = 30,
@@ -43,16 +47,16 @@ bufferline.setup({
 		-- custom_filter = function(buf_number)
 		--   -- filter out filetypes you don't want to see
 		--   if vim.bo[buf_number].filetype ~= "<i-dont-want-to-see-this>" then
-		--     return true
+		--	 return true
 		--   end
 		--   -- filter out by buffer name
 		--   if vim.fn.bufname(buf_number) ~= "<buffer-name-I-dont-want>" then
-		--     return true
+		--	 return true
 		--   end
 		--   -- filter out based on arbitrary rules
 		--   -- e.g. filter out vim wiki buffer from tabline in your work repo
 		--   if vim.fn.getcwd() == "<work-repo>" and vim.bo[buf_number].filetype ~= "wiki" then
-		--     return true
+		--	 return true
 		--   end
 		-- end,
 		offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
@@ -73,7 +77,7 @@ bufferline.setup({
 	},
 	highlights = {
 		fill = {
-			fg = { attribute = "fg", highlight = "#ff0000" },
+			fg = { attribute = "fg", highlight = "TabLine" },
 			bg = { attribute = "bg", highlight = "TabLine" },
 		},
 		background = {

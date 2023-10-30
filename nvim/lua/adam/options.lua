@@ -1,7 +1,3 @@
--- vim.cmd([[
--- set guicursor=
--- ]])
-
 vim.opt.shortmess:append 'c'
 vim.opt.path:append '**'
 vim.opt.hidden = true
@@ -27,11 +23,11 @@ vim.opt.signcolumn = "yes"
 vim.opt.list = true
 vim.wo.cursorline = true
 vim.opt.cursorcolumn = true
-vim.opt.wrap = true
 vim.opt.number = true
-vim.opt.relativenumber = true
 vim.opt.wrap = false
 vim.opt.timeoutlen = 100
+vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 10
 
 vim.g.cursorhold_updatetime = 100
 

@@ -125,7 +125,13 @@ cmp.setup({
 		{ name = "nvim_lua" },
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
-		{ name = "buffer" },
+		{ name = "buffer",
+			option = {
+				get_bufnrs = function()
+					return vim.api.nvim_list_bufs()
+				end
+			}
+		},
 		{ name = "path" },
 	},
 	confirm_opts = {
@@ -144,4 +150,25 @@ cmp.setup({
 		ghost_text = false,
 		native_menu = false,
 	},
+})
+
+cmp.setup.cmdline('/', {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = {
+		{ name = 'buffer' }
+	}
+})
+
+cmp.setup.cmdline(':', {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = cmp.config.sources({
+		{ name = 'path' }
+	}, {
+			{
+				name = 'cmdline',
+				option = {
+					ignore_cmds = { 'Man', '!' }
+				}
+			}
+	})
 })

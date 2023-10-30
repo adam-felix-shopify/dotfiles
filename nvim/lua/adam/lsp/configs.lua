@@ -7,7 +7,7 @@ local lspconfig = require("lspconfig")
 
 local servers = {
 	"jsonls",
-	"sumneko_lua",
+	"lua_ls",
 	"rust_analyzer",
 	"eslint",
 	"graphql",
@@ -32,3 +32,5 @@ for _, server in pairs(servers) do
 	end
 	lspconfig[server].setup(opts)
 end
+
+lspconfig.ruby_ls.setup{}
