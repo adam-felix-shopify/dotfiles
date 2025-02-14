@@ -1,0 +1,10 @@
+\/\*[^\n]*\n"products\.toast\.success\.mediaUploaded" = "[^"]*";\n\n
+
+\/\*(?!\*\\)*\n"products\.save\.active\.title" = "[^"]*";\n\n
+
+\/\*(?!\*\\)*\n"marketing\.activity\.shopifyEmail\.alert\.description" = "[^"]*";\n\n
+
+
+(products\.purchaseOptions\.list\.intervalDay|products\.purchaseOptions\.list\.intervalMonth|products\.purchaseOptions\.list\.intervalWeek|products\.purchaseOptions\.list\.intervalYear)
+
+\/\*[^\n]*\n"(products\.purchaseOptions\.list\.intervalDay|products\.purchaseOptions\.list\.intervalMonth|products\.purchaseOptions\.list\.intervalWeek|products\.purchaseOptions\.list\.intervalYear)" = "[^"]*";\n\n

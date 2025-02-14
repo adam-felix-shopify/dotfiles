@@ -1,0 +1,11 @@
+gh api graphql -F owner='organization' -F name='repo-name' -f query='
+  query($name: String!, $owner: String!) {
+    repository(owner: $owner, name: $name) {
+      releases(first: 3) {
+        nodes { 
+tagCommit { oid }
+tagName }
+      }
+    }
+  }
+'

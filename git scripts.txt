@@ -1,0 +1,23 @@
+## files in a specific commit
+
+git diff-tree --no-commit-id --name-only -r <commit-hash>
+
+## files in the most recent commit
+
+git diff-tree --no-commit-id --name-only $(git rev-parse HEAD) -r
+
+## files in the most recent commit along with status
+
+git diff-tree --no-commit-id --name-only --diff-filter=d -r $(git rev-parse HEAD)
+
+## current branch sha
+
+git rev-parse --abbrev-ref HEAD
+
+## combined
+
+git rev-parse --abbrev-ref HEAD | xargs git diff-tree --no-commit-id --name-only -r
+
+## conflicted files
+
+git diff --name-only --diff-filter=U --relative

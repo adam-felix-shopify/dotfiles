@@ -1,0 +1,28 @@
+SQL references:
+
+* https://www.executeprogram.com/
+    * __Scroll to the bottom__:  SQL (and other stuff)
+* Julia Evans zine:  Become a SELECT star
+    * https://jvns.ca/blog/2020/02/03/new-zine--become-a-select-star/
+* https://sql-playground.wizardzines.com/
+* Mode's SQL tutorial
+    * https://mode.com/sql-tutorial/
+* SQL Cookbook (O'Reilly)
+* Learning SQL (O'Reilly)
+* SQL for Mere Mortals
+* SQL Zoo
+    * https://sqlzoo.net/wiki/SQL_Tutorial
+
+University resources from colleague:
+
+* Batini, C., Ceri, S. & Navathe, S. B. (1992). Conceptual Database Design. Redwood City, CA: Benjamin/Cummings.
+* Blaha, M. & Premerlani, W. (1998). Object-Oriented Modeling and Design for Database Applications. Upper Saddle River, NJ: Prentice Hall.
+* Date, C. J. (2000). An Introduction to Database Systems. 7th Ed., Reading, MA: Addison-Wesley.
+* Elmasri, R. & Navathe, S. B. (2000). Fundamentals of Database Systems. 3rd Ed., Addison-Wesley.
+* Garcia-Molina, H., Ullman, J. & Widom, J. (2002), Database Systems: The Complete Book. Prentice-Hall.
+* Jacobson, I., Booch, G. & Rumbaugh, J. (1999). The Unified Software Development Process. Reading, MA: Addison-Wesley.
+* Kroenke, D. M. (1998). Database Processing: Fundamentals, Design and Implementation. Upper Saddle River, NJ: Prentice Hall.
+* Kumar, V. & Hsu, M. (1998). Recovery Mechanisms in Database Systems. Upper Saddle River, NJ: Prentice Hall.
+* McFadden, F. R., Hoffer, J. A. & Prescott, M. B. (1999). Modern Database Management. 5th Ed., Reading, MA: Addison Wesley.
+* Ramakrishnan, R. (1998). Database Management Systems. WCB/McGraw-Hill.
+* Silberschatz, A., Korth, H. F. & Sudarshan, S. (2002). Database System Concepts. 4th Ed., McGraw-Hill.

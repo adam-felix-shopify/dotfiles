@@ -1,0 +1,3 @@
+gh search prs --author="@me" --json=url,createdAt --jq='.[] | select(.createdAt | fromdateiso8601 > 0) | .url' --limit=200 --owner=Shopify
+
+gh pr list --author "atfelix" --state all --json='url,createdAt' --repo shopify/ios --limit 200 --jq '.[] | select(.createdAt | fromdateiso8601 >1598922000) | .url'
