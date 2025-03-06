@@ -21,3 +21,7 @@ git rev-parse --abbrev-ref HEAD | xargs git diff-tree --no-commit-id --name-only
 ## conflicted files
 
 git diff --name-only --diff-filter=U --relative
+
+## committed files versus main
+
+git diff main...$(git rev-parse --abbrev-ref HEAD) --name-only --relative
